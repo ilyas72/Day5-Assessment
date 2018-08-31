@@ -1,0 +1,42 @@
+<form #myForm="ngForm" (ngSubmit) ="processForm(myForm)">
+
+  
+    <mat-form-field>
+        <input matInput name="AlbumName" placeholder="Album Name" ngModel required>
+    </mat-form-field><br>
+
+    <mat-form-field>
+        <input matInput name="Artist" placeholder="Artist" ngModel required>
+    </mat-form-field><br>
+
+    <p>Rating</p>
+
+    <mat-slider name="Rating" min="0" max="10" step="1" value="1" ngModel></mat-slider> <br>
+
+    <mat-form-field>
+        <input matInput name="AlbumCover" placeholder="Image Name" ngModel>
+    </mat-form-field><br>
+
+ 
+  <!-- <input type="text" name ="AlbumName" placeholder="Album Name" ngModel required><br> -->
+
+  <!-- <input type="text" name ="Artist" placeholder="Artist" ngModel required><br> -->
+  
+ <!-- <input type="text" name ="AlbumCover" placeholder="Album Cover" ngModel required><br> -->
+
+ <div class="button-row" fxLayout="row" fxLayoutAlign="space-between">
+    
+    <button mat-raised-button color="accent" type="reset">
+            <mat-icon>clear</mat-icon>
+         Clear</button>
+
+         <button mat-raised-button color="accent" type="submit" [disabled]="myForm.invalid">
+                <mat-icon>add_box</mat-icon>
+                <span>Add</span>
+              </button>
+
+</div>
+<!-- <button type="reset"> Clear  </button>
+<button type="submit"> Add </button> -->
+
+</form>
